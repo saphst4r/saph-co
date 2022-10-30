@@ -11,18 +11,18 @@ import PocketDice from "./pages/PocketDice";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header/>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/works" element={<Works/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/nfts/saphst4r" element={<Saphst4r/>}/>
-          <Route path="/nfts/pocketdice" element={<PocketDice/>}/>
-        </Routes>
-        <Footer/>
-      </Router>
+        <Router>
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/works" element={<Works/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/nfts/saphst4r" element={<Saphst4r/>}/>
+            <Route path="/nfts/pocketdice" element={<PocketDice/>}/>
+          </Routes>
+          <Footer/>
+        </Router>
     </div>
   );
 }

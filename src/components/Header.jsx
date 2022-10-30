@@ -38,7 +38,7 @@ export default function Header() {
                             NFTs
                             <BsFillCaretDownFill className="ml-2 text-sm"/>
                         </button>
-                        <div className="hidden peer-hover:flex hover:flex w-[220px] flex-col bg-[#7F708A] drop-shadow-lg z-50 fixed">
+                        <div className="hidden peer-hover:flex hover:flex w-[220px] flex-col bg-[#7F708A] drop-shadow-lg z-50 absolute">
                             <ul>
                                 <li className="flex items-center cursor-pointer px-3 py-3 text-[#C7DCD0] border-b-[3px] border-[#694F62] hover:bg-[#694F62] hover:text-white" onClick={()=>navigate('/nfts/saphst4r')} >
                                     <img src={saphst4rThumbnail} alt="saphst4r thumbnail" className="h-10 border-[3px] border-[#694F62] rounded mr-4" />
