@@ -1,10 +1,13 @@
 import React from "react";
 import {useNavigate, useLocation} from "react-router-dom";
+import {useState} from "react";
 import logo from "../images/white-logo-1100.png"
 import twitter from "../images/twitter.png";
 import discord from "../images/discord.png"
 
 export default function Header() {
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isChooseNFT, setIsChooseNFT] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -14,13 +17,14 @@ export default function Header() {
     }
 
   return (
-    <div className="bg-[#2E222F] border-[#3E3546] border-b-[12px] shadow-sm sticky top-0 pt-2 z-40">
-        <header className="flex justify-between items-end px-3 w-full mx-auto">
+    <div className="bg-[#2E222F] border-[#3E3546] border-b-[12px] shadow-sm sticky top-0 pt-4 z-40">
+        <header className="flex justify-between items-baseline px-8 w-full mx-auto">
             <div className="">
-                <img src={logo} alt="logo" className="mb-2 h-12 cursor-pointer" onClick={()=>navigate('/')}/>
+                <img src={logo} alt="logo" className="h-12 cursor-pointer" onClick={()=>navigate('/')}/>
             </div>
-            <nav className='flex items-end'>
-                <ul className="flex space-x-5 items-center">
+            <nav className='flex'>
+                
+                <ul className="DESKTOP-MENU hidden lg:flex space-x-5 items-end">
                     <li className={`cursor-pointer py-3 px-7 text-xl font-medium text-[#C7DCD0] ${pathMatchRoute('/') && "bg-[#3E3546] text-white rounded-t-lg"}`} onClick={()=>navigate('/')} >
                         Home
                     </li>
@@ -63,22 +67,79 @@ export default function Header() {
                     {/* <li className={`cursor-pointer py-3 px-7 text-xl font-medium text-[#C7DCD0] ${pathMatchRoute('/contact') && "bg-[#3E3546] text-white rounded-t-lg"}`} onClick={()=>navigate('/contact')} >
                         Contact
                     </li> */}
-                    <li>
-                        <a href="https://twitter.com/saphst4r">
-                            <img src={twitter} alt="twitter" className="h-5 px-1 cursor-pointer"/>
-                        </a>
-                        
-                    </li>
-                    <li>
-                        <a href="https://discord.gg/tNGbwQVjNV">
-                            <img src={discord} alt="twitter" className="h-5 px-1 cursor-pointer" />
-                        </a>
-                        
-                    </li>
-
-
                 </ul>
+                <section className="flex items-center px-8">
+                    <ul className="flex space-x-5">
+                        <li>
+                            <a href="https://twitter.com/saphst4r">
+                                <img src={twitter} alt="twitter" className="h-5 px-1 cursor-pointer"/>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/tNGbwQVjNV">
+                                <img src={discord} alt="twitter" className="h-5 px-1 cursor-pointer" />
+                            </a>
+                            
+                        </li>
 
+                    </ul>
+                </section>
+                <section className="MOBILE-MENU flex lg:hidden py-3">
+                    <div className="HAMBURGER-ICON space-y-2" onClick={()=>setIsNavOpen((prevState)=>!prevState)} >
+                        <span className="block h-[3px] w-8 animate-pulse bg-[#C7DCD0]"></span>
+                        <span className="block h-[3px] w-8 animate-pulse bg-[#C7DCD0]"></span>
+                        <span className="block h-[3px] w-8 animate-pulse bg-[#C7DCD0]"></span>
+                    </div>
+                    <div className={isNavOpen? "showMenuNav" : "hideMenuNav"}>
+                        <div className="CROSS-ICON absolute top-0 right-0 px-8 py-8" onClick={() => setIsNavOpen(false)}>
+                        <svg
+                            className="h-8 w-8 text-[#C7DCD0]"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                        </div>
+                        <ul className="NAVIGATION-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
+                        <li className="border-b-[3px] border-[#C7DCD0] my-8 uppercase">
+                            <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/")}}>Home</a>
+                        </li>
+                        <li className="flex items-start space-x-7">
+                            <a href="#" className={`my-8 uppercase ${isChooseNFT ? "text-[#625565]" : " text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`} onClick={()=>setIsChooseNFT((prevState)=>!prevState)}>nfts</a>
+
+                            {isChooseNFT && 
+                                <div>
+                                    <ul>
+                                        <li className="border-b-[3px] border-[#C7DCD0] my-8 uppercase">
+                                            <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/nfts/saphst4r")}}>saphst4r</a>
+                                        </li>
+                                        <li className="border-b-[3px] border-[#C7DCD0] my-8 uppercase">
+                                            <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/nfts/pocketdice")}}>pocket dice</a>
+                                        </li>
+                                    </ul> 
+                                </div> 
+                            }
+                            
+                               
+                        </li>
+                        <li className="border-b-[3px] border-[#C7DCD0] my-8 uppercase">
+                            <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/works")}}>Works</a>
+                        </li>
+                        <li className="border-b-[3px] border-[#C7DCD0] my-8 uppercase">
+                            <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/about")}}>About</a>
+                        </li>
+                        <li className="border-b-[3px] border-[#C7DCD0] my-8 uppercase">
+                            <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/contact")}}>Contact</a>
+                        </li>
+                        </ul>
+                    </div>
+                </section>
             </nav>
         </header>
     </div>
