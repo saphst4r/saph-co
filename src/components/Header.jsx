@@ -13,6 +13,10 @@ import{IoIosClose} from "react-icons/io";
 export default function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isChooseNFT, setIsChooseNFT] = useState(false);
+    const [isHoveringParent, setIsHoveringParent] = useState({
+        "saphst4r": false,
+        "pocketDice": false,
+    });
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -40,12 +44,12 @@ export default function Header() {
                         </button>
                         <div className="hidden peer-hover:flex hover:flex w-[220px] flex-col bg-[#7F708A] drop-shadow-lg z-50 absolute">
                             <ul>
-                                <li className="flex items-center cursor-pointer px-3 py-3 text-[#C7DCD0] border-b-[3px] border-[#694F62] hover:bg-[#694F62] hover:text-white" onClick={()=>navigate('/nfts/saphst4r')} >
-                                    <img src={saphst4rThumbnail} alt="saphst4r thumbnail" className="h-10 border-[3px] border-[#694F62] rounded mr-4" />
+                                <li className="flex items-center cursor-pointer px-3 py-3 text-[#C7DCD0] border-b-[3px] border-[#694F62] hover:bg-[#694F62] hover:text-white" onClick={()=>navigate('/nfts/saphst4r')} onMouseOver={()=>setIsHoveringParent(()=>({"saphst4r": true, "pocketDice": false}))} onMouseOut={()=>setIsHoveringParent(()=>({"saphst4r": false, "pocketDice": false}))} >
+                                    <img src={saphst4rThumbnail} alt="saphst4r thumbnail" className={`h-10 border-[3px] border-[#694F62] rounded mr-4 ${isHoveringParent.saphst4r ? "grayscale-0" : "grayscale"}`} />
                                     SAPHST4R
                                 </li>
-                                <li className="flex items-center cursor-pointer px-3 py-3 text-[#C7DCD0] border-b-[3px] border-[#694F62] hover:bg-[#694F62] hover:text-white" onClick={()=>navigate('/nfts/pocketdice')} >
-                                    <img src={pocketDiceThumbnail} alt="pocketdice thumbnail" className="h-10 border-[3px] border-[#694F62] rounded mr-4" />
+                                <li className="flex items-center cursor-pointer px-3 py-3 text-[#C7DCD0] border-b-[3px] border-[#694F62] hover:bg-[#694F62] hover:text-white" onClick={()=>navigate('/nfts/pocketdice')} onMouseOver={()=>setIsHoveringParent(()=>({"saphst4r": false, "pocketDice": true}))} onMouseOut={()=>setIsHoveringParent(()=>({"saphst4r": false, "pocketDice": false}))} >
+                                    <img src={pocketDiceThumbnail} alt="pocketdice thumbnail" className={`h-10 border-[3px] border-[#694F62] rounded mr-4 ${isHoveringParent.pocketDice ? "grayscale-0" : "grayscale"}`} />
                                     POCKET DICE
                                 </li>
                             </ul>
@@ -88,38 +92,38 @@ export default function Header() {
                                 <IoIosClose className="text-[#C7DCD0] text-6xl" onClick={() => setIsNavOpen(false)}/>
                             </div>
                             <ul className="NAVIGATION-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-                                <li className={`my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
-                                    <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/")}}>Home</a>
+                                <li className={`cursor-pointer my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
+                                    <div onClick={()=>{setIsNavOpen(false); navigate("/")}}>Home</div>
                                 </li>
                                 <li className={`flex space-x-3 ${isChooseNFT ? "bg-[#2E222F] w-full justify-center" : "bg-transparent"}`}>
-                                    <a href="#" className={`flex items-center my-8 uppercase`} onClick={()=>setIsChooseNFT((prevState)=>!prevState)}>
-                                        <div className="flex items-center">
-                                            {isChooseNFT ? <span className="text-xs text-[#625565]"><BsFillCaretLeftFill/></span> 
-                                                : <span className="text-xs text-[#C7DCD0]">
+                                    <div className={`flex items-center my-8 uppercase`} onClick={()=>setIsChooseNFT((prevState)=>!prevState)}>
+                                        <div className="cursor-pointer flex items-center">
+                                            {isChooseNFT ? <div className="h-full text-xs text-[#625565]"><BsFillCaretLeftFill className="absolute left-4  "/></div> 
+                                                : <div className="text-xs text-[#C7DCD0]">
                                                     <BsFillCaretRightFill/>
-                                                </span>
+                                                </div>
                                             }
-                                                <span className={isChooseNFT ? "text-xl font-semibold text-[#625565]" : " text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}>nfts</span>
+                                                <div className={isChooseNFT ? "text-xl font-semibold text-[#625565]" : " text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}>nfts</div>
                                         </div>
                                         {isChooseNFT && <div className="ml-3 h-16 w-2 border-l-[3px] border-y-[3px] rounded-sm border-[#625565]"></div>}
-                                    </a>
+                                    </div>
 
                                     {isChooseNFT && 
                                         <div>
                                             <ul>
-                                                <li className="my-8 uppercase">
-                                                    <a href="#" className="flex items-center" onClick={()=>{setIsNavOpen(false); setIsChooseNFT(false);navigate("/nfts/saphst4r")}}>
+                                                <li className="cursor-pointer my-8 uppercase">
+                                                    <div className="flex items-center" onClick={()=>{setIsNavOpen(false); setIsChooseNFT(false);navigate("/nfts/saphst4r")}}>
                                                         <img src={saphst4rThumbnail} alt="saphst4r thumbnail" className="h-8 border-[3px] border-[#625565] rounded mr-2" />
                                                         <p className="">saphst4r</p>
                                                         <p className="px-2 text-xs">(sold out)</p> 
-                                                    </a>
+                                                    </div>
                                                 </li>
-                                                <li className="my-8 uppercase">
-                                                    <a href="#" className="flex items-center" onClick={()=>{setIsNavOpen(false); setIsChooseNFT(false); navigate("/nfts/pocketdice")}}>
+                                                <li className="cursor-pointer my-8 uppercase">
+                                                    <div className="flex items-center" onClick={()=>{setIsNavOpen(false); setIsChooseNFT(false); navigate("/nfts/pocketdice")}}>
                                                         <img src={pocketDiceThumbnail} alt="pocketdice thumbnail" className="h-8 border-[3px] border-[#625565] rounded mr-2" />
                                                         <p className="">pocket dice</p>
                                                         <p className="px-2 text-xs">(TBA)</p> 
-                                                    </a>
+                                                    </div>
                                                 </li>
                                                 {/* ADD NEW COLLECTION ITEMS AS LI HERE */}
                                             </ul> 
@@ -128,14 +132,14 @@ export default function Header() {
                                     
                                     
                                 </li>
-                                <li className={`my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
-                                    <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/works")}}>Works</a>
+                                <li className={`cursor-pointer my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
+                                    <div onClick={()=>{setIsNavOpen(false); navigate("/works")}}>Works</div>
                                 </li>
-                                <li className={`my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
-                                    <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/about")}}>About</a>
+                                <li className={`cursor-pointer my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
+                                    <div onClick={()=>{setIsNavOpen(false); navigate("/about")}}>About</div>
                                 </li>
-                                <li className={`my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
-                                    <a href="#" onClick={()=>{setIsNavOpen(false); navigate("/contact")}}>Contact</a>
+                                <li className={`cursor-pointer my-8 uppercase ${isChooseNFT ? "font-bold border-b-0 text-[#2E222F]" : "font-normal text-[#C7DCD0] border-b-[3px] border-[#C7DCD0]"}`}>
+                                    <div onClick={()=>{setIsNavOpen(false); navigate("/contact")}}>Contact</div>
                                 </li>
                             </ul>
                         </div>

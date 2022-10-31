@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300&family=Rubik+Mono+One&display=swap');
 @font-face { 
     font-family: "Monocraft"; 
     src: url('../src/fonts/Monocraft.otf'); } 
@@ -25,4 +26,11 @@
     justify-content: space-evenly;
     align-items: center;
     color: #C7DCD0;
+}
+.title{
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+.karla{
+    font-family: 'Karla', sans-serif;
 }
