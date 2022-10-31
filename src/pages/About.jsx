@@ -10,8 +10,8 @@ export default function About() {
   return (
     <div className='bg-[#3E3546] min-h-[65vh] flex flex-col'>
       <section className="flex-1 sm:flex items-center justify-center sm:space-x-8 max-w-6xl mx-auto">
-        <div className='relative flex py-6 px-3 text-[#C7DCD0] hover:text-[#3E3546] transition duration-300 ease-in-out'>
-          <img src="https://media-exp1.licdn.com/dms/image/C5103AQEYRsOucUT8Ng/profile-displayphoto-shrink_800_800/0/1517488595010?e=1672876800&v=beta&t=l2nTlK5P2IQNR6lMrTJI6YfLuo14g2kfPIzKHayyibI" alt="image" className='cursor-pointer max-h-[200px] mx-auto border-[10px] border-[#C7DCD0] hover:border-[#2E222F] transition duration-150 ease-in-out'onMouseOver={()=>setIsHover(true)} onMouseOut={()=>setIsHover(false)} onClick={()=>openInNewTab("https://www.linkedin.com/in/asaphkim")}/>
+        <div className='relative flex py-6 px-3 text-[#C7DCD0] hover:text-[#3E3546] active:text-[#0077b5] transition duration-150 ease-in-out'>
+          <img src="https://media-exp1.licdn.com/dms/image/C5103AQEYRsOucUT8Ng/profile-displayphoto-shrink_800_800/0/1517488595010?e=1672876800&v=beta&t=l2nTlK5P2IQNR6lMrTJI6YfLuo14g2kfPIzKHayyibI" alt="image" className='cursor-pointer max-h-[200px] shadow-md hover:shadow-xl active:shadow-xl mx-auto border-[10px] border-[#C7DCD0] hover:border-[#2E222F] active:border-[#0077b5] object-cover hover:scale-105 transition-scale duration-200 ease-in-out transition duration-150 ease-in-out'onMouseOver={()=>setIsHover(true)} onMouseOut={()=>setIsHover(false)} onClick={()=>openInNewTab("https://www.linkedin.com/in/asaphkim")}/>
           <AiFillLinkedin className=' text-2xl flex relative opacity-0 md:opacity-100 md:top-3 md:right-9 z-10'/>
         </div>
         <div className='text-[#C7DCD0] px-6'> 
