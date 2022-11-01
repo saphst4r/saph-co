@@ -4,20 +4,18 @@ import { toast } from 'react-toastify';
 
 export default function Contact() {
   const form = useRef();
-  const {YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY} = process.env
+  const {REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY} = process.env
   async function onSubmit(e){
     e.preventDefault();
-    emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, YOUR_PUBLIC_KEY)
-      .then((result) => {
-        console.log(result.text);
-        e.target.reset();
-    }, (error) => {
-        console.log(error.text);
-    });
-
+    try {
+      await emailjs.sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, form.current, REACT_APP_PUBLIC_KEY)
+      e.target.reset();
+      toast.success("Message Sent Successfully!");
+    } catch (error) {
+      toast.error("Could not send message!");
+    }
 
   }
-
 
   return (
     <div className='min-h-[65vh] flex flex-col w-full bg-[#3E3546]'>
