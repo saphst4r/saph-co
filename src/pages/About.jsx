@@ -11,7 +11,7 @@ export default function About() {
     <div className='bg-[#3E3546] min-h-[65vh] flex flex-col'>
       <section className="flex-1 sm:flex items-center justify-center sm:space-x-8 max-w-6xl mx-auto">
         <div className='relative flex py-6 px-3 text-[#C7DCD0] hover:text-[#3E3546] active:text-[#0077b5] transition duration-150 ease-in-out'>
-          <img src="https://media-exp1.licdn.com/dms/image/C5103AQEYRsOucUT8Ng/profile-displayphoto-shrink_800_800/0/1517488595010?e=1672876800&v=beta&t=l2nTlK5P2IQNR6lMrTJI6YfLuo14g2kfPIzKHayyibI" alt="image" className='cursor-pointer max-h-[200px] shadow-md hover:shadow-xl active:shadow-xl mx-auto border-[10px] border-[#C7DCD0] hover:border-[#2E222F] active:border-[#0077b5] object-cover hover:scale-105 transition-scale duration-200 ease-in-out transition duration-150 ease-in-out'onMouseOver={()=>setIsHover(true)} onMouseOut={()=>setIsHover(false)} onClick={()=>openInNewTab("https://www.linkedin.com/in/asaphkim")}/>
+          <img src="https://media-exp1.licdn.com/dms/image/D4D03AQEvElfRLrWNDQ/profile-displayphoto-shrink_800_800/0/1667357884032?e=1672876800&v=beta&t=ooQwptOLQEfVIpoPcRI3Uk_nCp4bKmDe6jevtVQv-TY" alt="SAPH" className='cursor-pointer max-h-[200px] shadow-md hover:shadow-xl active:shadow-xl mx-auto border-[10px] border-[#C7DCD0] hover:border-[#2E222F] active:border-[#0077b5] object-cover hover:scale-105 transition-scale duration-200 ease-in-out transition duration-150 ease-in-out'onMouseOver={()=>setIsHover(true)} onMouseOut={()=>setIsHover(false)} onClick={()=>openInNewTab("https://www.linkedin.com/in/asaphkim")}/>
           <AiFillLinkedin className=' text-2xl flex relative opacity-0 md:opacity-100 md:top-3 md:right-9 z-10'/>
         </div>
         <div className='text-[#C7DCD0] px-6'> 
@@ -29,7 +29,7 @@ export default function About() {
           {/* end of about title */}   
           <div className='max-w-[400px]'>
             <p className='karla'>
-              Asaph is an multimedia artist/creator and web developer. He was put on this earth to create fun and interesting things with other people. He studied design in Brooklyn and helped start up an Edtech robotics company in Korea. He spent the past year learning web development skills while moonlighting as a pixel artist for Drunken Dragon Entertainment.
+              Asaph is an multimedia artist/creator and web developer. He was put on this earth to create fun and interesting things with other people. He studied design in Brooklyn and helped start up an Edtech robotics company in Korea. He spent the past year exploring web development and AI while moonlighting as a pixel artist for Drunken Dragon Entertainment.
               <br />
               <br />
               “I’m currently in my pixel art phase, so bear with me as I explore and relive the unadulterated fascination I had for 16bit video games as a child. ”
