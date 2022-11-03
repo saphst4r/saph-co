@@ -69,19 +69,19 @@ export default function Header() {
                 <section className="flex items-center px-8">
                     <ul className="flex space-x-5">
                         <li>
-                            <a href="https://twitter.com/saphst4r">
+                            <a href="https://twitter.com/saphst4r" target="_blank" rel="noopener noreferrer">
                                 <img src={twitter} alt="twitter" className="h-5 px-1 cursor-pointer"/>
                             </a>
                             
                         </li>
                         <li>
-                            <a href="https://discord.gg/tNGbwQVjNV">
-                                <img src={discord} alt="twitter" className="h-5 px-1 cursor-pointer" />
+                            <a href="https://discord.gg/tNGbwQVjNV" target="_blank" rel="noopener noreferrer">
+                                <img src={discord} alt="discord" className="h-5 px-1 cursor-pointer" />
                             </a>
                             
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/saphst4r/">
+                            <a href="https://www.instagram.com/saphst4r/" target="_blank" rel="noopener noreferrer">
                                 <img src={instagram} alt="instagram" className="h-5 px-1 cursor-pointer" />
                             </a>
                             
