@@ -4,6 +4,7 @@ import {useState} from "react";
 import logo from "../images/white-logo-1100.png";
 import twitter from "../images/twitter.png";
 import discord from "../images/discord.png";
+import instagram from "../images/instagram.png";
 import saphst4rThumbnail from "../images/saphst4r-thumbnail.gif";
 import pocketDiceThumbnail from "../images/pocketDice-thumbnail.gif";
 import { BsFillCaretDownFill, BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
@@ -76,6 +77,12 @@ export default function Header() {
                         <li>
                             <a href="https://discord.gg/tNGbwQVjNV">
                                 <img src={discord} alt="twitter" className="h-5 px-1 cursor-pointer" />
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/saphst4r/">
+                                <img src={instagram} alt="instagram" className="h-5 px-1 cursor-pointer" />
                             </a>
                             
                         </li>

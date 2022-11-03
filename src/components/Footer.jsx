@@ -15,6 +15,9 @@ export default function Footer() {
                         <li className={`cursor-pointer py-3 px-3 text-md font-medium text-[#C7DCD0]`}>
                             <a href="https://discord.gg/tNGbwQVjNV">Discord</a> 
                         </li>
+                        <li className={`cursor-pointer py-3 px-3 text-md font-medium text-[#C7DCD0]`}>
+                            <a href="https://www.instagram.com/saphst4r/">Instagram</a> 
+                        </li>
                         <li className={`cursor-pointer  px-3 text-md font-medium text-[#C7DCD0]`} onClick={()=>navigate('/contact')} >
                             Contact
                         </li>

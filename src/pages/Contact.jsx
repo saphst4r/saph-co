@@ -28,14 +28,14 @@ export default function Contact() {
                 <label className="block uppercase tracking-wide text-[#c7dcd0] text-xs font-bold mb-2" htmlFor="grid-first-name">
                   First Name
                 </label>
-                <input className="appearance-none block w-full bg-gray-200 text-[#2E222F] border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name="first_name" placeholder="Jane" required/>
-                <p className="text-red-500 text-xs italic">*required</p>
+                <input className="appearance-none block w-full bg-gray-200 text-[#2E222F] border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name="first_name" placeholder="Jane" onFocus={(e)=>e.target.placeholder=""} onBlur={(e)=>e.target.placeholder="Jane"} required/>
+                <p className="text-red-500 text-xs italic">*required field</p>
               </div>
               <div className="w-full md:w-1/2 px-3">
                 <label className="block uppercase tracking-wide text-[#c7dcd0] text-xs font-bold mb-2" htmlFor="grid-last-name">
                   Last Name
                 </label>
-                <input className="appearance-none block w-full bg-gray-200 text-[#2E222F] border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" name="last_name" placeholder="Doe"/>
+                <input className="appearance-none block w-full bg-gray-200 text-[#2E222F] border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" name="last_name" placeholder="Doe" onFocus={(e)=>e.target.placeholder=""} onBlur={(e)=>e.target.placeholder="Doe"}/>
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
@@ -44,7 +44,7 @@ export default function Contact() {
                   E-mail
                 </label>
                 <input className="appearance-none block w-full bg-gray-200 text-[#2E222F] border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" name="user_email" required/>
-                <p className="text-red-500 text-xs italic">*required</p>
+                <p className="text-red-500 text-xs italic">*required field</p>
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">

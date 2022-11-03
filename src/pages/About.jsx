@@ -28,7 +28,7 @@ export default function About() {
           </div>
           {/* end of about title */}   
           <div className='max-w-[400px]'>
-            <p className='karla'>
+            <p className='text-sm'>
               Asaph is an multimedia artist/creator and web developer. He was put on this earth to create fun and interesting things with other people. He studied design in Brooklyn and helped start up an Edtech robotics company in Korea. He spent the past year exploring web development and AI while moonlighting as a pixel artist for Drunken Dragon Entertainment.
               <br />
               <br />
@@ -39,7 +39,7 @@ export default function About() {
       </section>
 
       <section className='py-6'>
-        <p className='karla text-center text-sm text-[#9BABB2]'>Wanna collaborate? <Link to="/contact" className='karla text-[#C7DCD0] hover:text-white transition duration-200 ease-in-out'>Message me</Link></p> 
+        <p className='text-center text-xs text-[#9BABB2]'>Wanna collaborate? <Link to="/contact" className=' text-[#C7DCD0] hover:text-white transition duration-200 ease-in-out'>Message me</Link></p> 
       </section>
 
     </div>
