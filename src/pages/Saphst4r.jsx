@@ -23,8 +23,8 @@ export default function Saphst4r() {
         {/* BLUE PANEL START */}
         <div className='flex w-full items-center justify-center '>
           <div className='transition space-y-4 md:space-y-2 justify-center absolute top-[322px] md:top-[490px] lg:top-[480px] bg-[#4D65B4] w-[75%] md:w-[65%] h-[130px] border-t-[12px] border-[#4D9BE6] drop-shadow-md m-auto'>
-            <div className='flex justify-center pt-11 md:pt-9'>
-              <img src={saphst4rTitle} alt="SAPHST4R - ORIGINAL 103" className='max-w-[80%] object-cover'/>
+            <div className='flex justify-center pt-11'>
+              <h1 className='title text-white text-2xl lg:text-3xl'>SAPHST4R - ORIGINAL 103</h1> 
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function Saphst4r() {
           <p className='text-[#7F708A] text-center text-xs font-bold '>View the collection at:</p>
           <div className='flex justify-center'>
             <a href="https://www.jpg.store/collection/saphst4r" target="_blank" rel="noopener noreferrer">
-              <div className=' bg-[#D5E04B] mt-4 py-4 px-24 border-x-4 border-b-8 border-[#808352] text-[#2E222F] text-xl shadow-md hover:shadow-lg hover:bg-[#FBFF86] hover:border-[#CDDF6C]  active:shadow-lg active:bg-[#547E64] active:border-[#374E4A] transition duration-150 ease-in-out cursor-pointer'>JPG.STORE</div>
+              <div className=' bg-[#D5E04B] mt-4 py-4 px-24 border-x-4 border-b-8 border-[#808352] text-[#808352] text-xl shadow-md hover:shadow-lg hover:bg-[#FBFF86] hover:border-[#CDDF6C]  active:shadow-lg active:bg-[#547E64] active:border-[#374E4A] transition duration-150 ease-in-out cursor-pointer'>JPG.STORE</div>
             </a>
           </div>
 

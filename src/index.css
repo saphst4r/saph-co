@@ -5,6 +5,9 @@
 @font-face { 
     font-family: "Monocraft"; 
     src: url('../src/fonts/Monocraft.otf'); } 
+@font-face { 
+    font-family: "FontSt4r"; 
+    src: url('../src/fonts/FontST4R.ttf'); } 
 
 *{
     font-family: "Monocraft";
@@ -28,7 +31,7 @@
     color: #C7DCD0;
 }
 .title{
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'FontSt4r';
 }
 
 .karla{
